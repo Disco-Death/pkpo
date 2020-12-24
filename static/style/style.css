@@ -1,0 +1,154 @@
+body {
+  background-color: #4e2fe4;
+}
+
+body header {
+  height: 10vh;
+  width: 100%;
+}
+
+body .get-info form label {
+  display: none;
+}
+
+body header .logo p {
+  color: white;
+}
+
+body .get-info {
+  position: relative;
+  z-index: 2;
+  height: 250px;
+  width: 300px;
+  background-color: orange;
+  margin-left: 700px;
+  margin-top: 200px;
+  padding: 40px;
+}
+
+body .get-info form {
+  width: 100%;
+}
+
+body .get-info form .placeholder {
+  text-decoration: none;
+  border: none;
+  display: block;
+  margin-top: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  padding: 10px 5px;
+  padding-left: 10px;
+}
+
+body .get-info form .submit {
+  color: white;
+  text-decoration: none;
+  border: none;
+  display: block;
+  margin-top: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  padding: 10px 80px;
+  background-color: #5466da;
+  background-image: linear-gradient(bottom, #5466da 0%, #768ee4 100%);
+  box-shadow: inset 0px 1px 0px #9ab1ec;
+}
+
+.air {
+  position: absolute;
+  width: 800px;
+  z-index: 1;
+}
+
+body.info {
+  background-color: #0c73fe;
+}
+
+body.info label {
+  position: absolute;
+  margin-top: -30px;
+  color: white;
+}
+
+body.info form #id_date_from_month, body.info form #id_date_from_day, body.info form #id_date_from_year {
+  background-color: white;
+  color: black;
+  padding: 12px;
+  width: 120px;
+  border: none;
+  font-size: 20px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  margin-right: 3px;
+}
+
+body.info form #id_date_from_year {
+  margin-right: 10px;
+}
+
+body.info form #button-sumbit {
+  background-color: white;
+  color: black;
+  padding: 12px;
+  width: 200px;
+  border: none;
+  font-size: 20px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+}
+
+body.info form #type, body.info form #to, body.info form #from {
+  background-color: white;
+  color: black;
+  padding: 12px;
+  width: 200px;
+  border: none;
+  font-size: 20px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+  appearance: none;
+  outline: none;
+  border-radius: 5px;
+}
+
+.filters {
+  height: 100px;
+  width: 100%;
+  background-color: #0c73fe;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding-top: 30px;
+}
+
+.result {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+}
+
+.ticket {
+  margin-top: 2px;
+  border: 2px solid white;
+  padding: 5px;
+  width: 100%;
+  border-radius: 5px;
+  color: white;
+}
+
+.button-check {
+  background-color: white;
+  color: black;
+  padding: 5px;
+  width: 400px;
+  border: none;
+  font-size: 20px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  margin-bottom: 60px;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+/*# sourceMappingURL=style.css.map */

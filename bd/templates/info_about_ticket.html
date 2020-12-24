@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Информация о билете</title>
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css" integrity="sha384-DhY6onE6f3zzKbjUPRc2hOzGAdEf4/Dz+WJwBvEYL/lkkIsI3ihufq9hk9K4lVoK" crossorigin="anonymous">
+   <link rel="stylesheet" href="{% static 'style/style.css' %}"/>
+</head>
+<body>
+   <form method = "POST">
+      {% csrf_token %}
+   </form>
+   <form action="" method="POST">
+      {% csrf_token %}
+      {{ form }}
+      <button type="sumbit" name="button_sumbit">Найти</button>
+   </form>
+   <div class="ticket">
+   {% if code %}
+      <p>Код бронирования: {{ code }}{{Booked_Message}}</p>
+      <div>Город отправления: {{ from_airport }}</div>
+      <div>Дата отправления: {{ date_from }}</div>
+      <div>Время отправления: {{ time_from}}</div>
+      <div>Город назначения: {{ to_airport }}</div>
+      <div>Дата и время прибытия: {{ datetime_to }}</div>
+      <div>Тип билета: {{ choice }}-класс</div>
+      <div>Цена билета: {{ cost }} руб.</div>
+      <div>Место: {{ seat_no }}</div>
+      <div>Дверь: {{ door }}</div>
+   {% else %}
+      <div>{{ message }}</div>
+   {% endif %}
+   </div>
+</body>
+</html>

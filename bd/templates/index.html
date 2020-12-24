@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ru">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Главная</title>
+   
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css" integrity="sha384-DhY6onE6f3zzKbjUPRc2hOzGAdEf4/Dz+WJwBvEYL/lkkIsI3ihufq9hk9K4lVoK" crossorigin="anonymous">
+   <link rel="stylesheet" href="{% static 'style/style.css' %}"/>
+</head>
+<body>
+   <div class="container">
+      <header>
+         <div class="logo">
+            <p>PayAir</p>
+         </div>
+      </header>
+      <img class = "air" src="{% static '/img/air.png' %}" alt="">
+      <div class="get-info ">
+         <form method = "POST">
+            {% csrf_token %}
+         <form action="/your-name/" method="post">
+            <label for="username">Логин:</label>
+            {% csrf_token %}
+            {{ form }}
+            <input type="submit" value="ВОЙТИ" class="submit">
+         </form>
+      </div>
+   </div>
+</body>
+</html>

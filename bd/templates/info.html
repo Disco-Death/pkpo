@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Подбор билета</title>
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css" integrity="sha384-DhY6onE6f3zzKbjUPRc2hOzGAdEf4/Dz+WJwBvEYL/lkkIsI3ihufq9hk9K4lVoK" crossorigin="anonymous">
+   <link rel="stylesheet" href="{% static 'style/style.css' %}"/>
+</head>
+<body class="info">
+   <button class="button-check"><a href="/info_about_ticket" method="GET">Получить информацию о билете</a></button>
+   <form method = "POST">
+      {% csrf_token %}
+   </form>
+   <form action="" method="POST">
+      {% csrf_token %}
+      {{ form }}
+      <button type="sumbit" name="button_sumbit" id="button-sumbit">Запрос</button>
+   </form>
+   <div class="result">
+      <article>
+      {% if result %}
+         {% if items%}
+            {% for item in items %}
+               <section class="ticket">
+                  <p>Код бронирования: {{ item.code }}</p>
+                  <div>Город отправления: {{ item.from_airport }}</div>
+                  <div>Дата отправления: {{ item.date_from }}</div>
+                  <div>Время отправления: {{ item.time_from}}</div>
+                  <div>Город назначения: {{ item.to_airport }}</div>
+                  <div>Дата и время прибытия: {{ item.datetime_to }}</div>
+                  <div>Тип билета: {{ item.choice }}-класс</div>
+                  <div>Цена билета: {{ item.cost }} руб.</div>
+                  <div>Место: {{ item.seat_no }}</div>
+                  <div>Дверь: {{ item.door }}</div>
+                  <button class = "buy">Купить</button>
+                  <button class = "to_book"><a href="/info_about_ticket?code={{ item.code }}">Забронировать</a></button>
+               </section>
+            {% endfor %}
+         {% else %}
+            <div class="ticket">Жаль, но такие билеты не были найдены :(</div>
+         {% endif %}
+      {% endif %}
+      </article>
+   </div>
+</body>
+</html>
